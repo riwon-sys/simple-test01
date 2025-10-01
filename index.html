@@ -90,12 +90,10 @@
 <body>
 
 <!-- README 스타일 헤더 -->
-<div class="h1">리원 추가매수 간단 계산기 👋</div>
+<div class="h1">리원 추가매수 간단 계산기 </div>
 <div class="badges">
   <span class="badge">KRW 전용</span>
-  <span class="badge">오프라인 지원</span>
-  <span class="badge ghost">PWA</span>
-  <span class="badge ghost">No Backend</span>
+  
 </div>
 <div class="hr"></div>
 
@@ -113,21 +111,21 @@
   <div class="grid">
     <div>
       <label>코인명</label>
-      <input id="coin" placeholder="예) WLFI">
+      <input id="coin" placeholder="예) BTC">
     </div>
     <div>
       <label>보유수량 *</label>
-      <input id="holdQty" type="number" inputmode="decimal" step="any" placeholder="예) 3092.4437">
+      <input id="holdQty" type="number" inputmode="decimal" step="any" placeholder="예) 3092">
     </div>
   </div>
   <div class="grid">
     <div>
       <label>매수평균가 (KRW) *</label>
-      <input id="holdAvg" type="number" inputmode="decimal" step="any" placeholder="예) 279.3">
+      <input id="holdAvg" type="number" inputmode="decimal" step="any" placeholder="예) 100">
     </div>
     <div>
       <label>현재가 (KRW) *</label>
-      <input id="now" type="number" inputmode="decimal" step="any" placeholder="예) 282">
+      <input id="now" type="number" inputmode="decimal" step="any" placeholder="예) 100">
     </div>
   </div>
 </fieldset>
@@ -149,7 +147,7 @@
   <input id="addInvest" type="number" inputmode="decimal" step="any" placeholder="금액 입력 시 수량 자동 계산">
   <button class="btn" id="calcBtn">계산하기</button>
   <div id="warn" class="warn" style="display:none;"></div>
-  <div class="note">※ 수량/금액 중 하나만 입력해도 됩니다. 둘 다 입력 시 <b>금액</b> 우선.</div>
+  <div class="note">※ 수량/금액 중 하나만 입력해도 됩니다.</div>
 </fieldset>
 
 <div class="section-title">📈 결과</div>
