@@ -19,95 +19,67 @@
     }
   </script>
 
-<style>
-  :root{
-    --bg:#fafbfc; --card:#ffffff; --bd:#e1e4e8; --text:#24292e; --muted:#6a737d;
-    --link:#0366d6; --pos:#22863a; --neg:#d73a49; --accent:#2ea44f;
-    --radius:12px; --gap:14px;
-  }
-  *{box-sizing:border-box}
-  body{
-    margin:0; padding:24px; max-width:980px; margin-inline:auto;
-    font-family: ui-sans-serif, -apple-system, "Segoe UI", Roboto, "Noto Sans KR", Arial;
-    color:var(--text); background:var(--bg);
-  }
+  <style>
+    :root{
+      --bg:#fafbfc; --card:#ffffff; --bd:#e1e4e8; --text:#24292e; --muted:#6a737d;
+      --pos:#22863a; --neg:#d73a49;
+      --radius:12px; --gap:14px;
+    }
+    *{box-sizing:border-box}
+    body{ margin:0; padding:24px; max-width:980px; margin-inline:auto;
+      font-family: ui-sans-serif, -apple-system, "Segoe UI", Roboto, "Noto Sans KR", Arial;
+      color:var(--text); background:var(--bg);
+    }
+    .h1{font-size:28px; font-weight:900; margin:0 0 8px}
+    .hr{height:1px; background:#dfe2e5; border:0; margin:16px 0}
+    .badges{display:flex; gap:8px; flex-wrap:wrap; margin:6px 0 12px}
+    .badge{display:inline-flex; align-items:center; gap:6px; padding:6px 10px; border:1px solid var(--bd);
+      background:#f6f8fa; color:#24292e; border-radius:999px; font-size:12px; font-weight:700}
+    .section-title{display:flex; align-items:center; gap:8px; font-size:18px; font-weight:800; margin:18px 0 8px}
+    .note{color:var(--muted); font-size:12px}
 
-  /* README-style header */
-  .h1{font-size:28px; font-weight:900; margin:0 0 8px}
-  .hr{height:1px; background:#dfe2e5; border:0; margin:16px 0}
-  .badges{display:flex; gap:8px; flex-wrap:wrap; margin:6px 0 12px}
-  .badge{display:inline-flex; align-items:center; gap:6px; padding:6px 10px; border:1px solid var(--bd);
-    background:#f6f8fa; color:#24292e; border-radius:999px; font-size:12px; font-weight:700}
-  .badge.ghost{background:#fff}
+    fieldset{ border:1px solid var(--bd); border-radius:var(--radius);
+      background:var(--card); padding:14px; margin:10px 0; }
+    legend{font-weight:800; color:#24292e; padding:0 6px}
+    label{display:block; margin:10px 0 6px; font-weight:600}
+    input{ width:100%; padding:10px; border:1px solid var(--bd); border-radius:8px; background:#fff; outline:none; }
+    input:focus{border-color:#79b8ff; box-shadow:0 0 0 3px rgba(3,102,214,.15)}
+    .grid{display:grid; grid-template-columns:1fr 1fr; gap:var(--gap)}
+    @media (max-width:760px){ .grid{grid-template-columns:1fr} }
 
-  /* sections */
-  .section-title{display:flex; align-items:center; gap:8px; font-size:18px; font-weight:800; margin:18px 0 8px}
-  .note{color:var(--muted); font-size:12px}
+    .btn{ width:100%; margin-top:10px; padding:12px; border-radius:8px; border:1px solid #2c974b;
+      background:linear-gradient(#34d058,#28a745); color:#fff; font-weight:800; cursor:pointer; }
+    .btn:active{transform:translateY(1px)}
 
-  /* inputs card */
-  fieldset{
-    border:1px solid var(--bd); border-radius:var(--radius);
-    background:var(--card); padding:14px; margin:10px 0;
-  }
-  legend{font-weight:800; color:#24292e; padding:0 6px}
-  label{display:block; margin:10px 0 6px; font-weight:600}
-  input{
-    width:100%; padding:10px; border:1px solid var(--bd); border-radius:8px; background:#fff; outline:none;
-  }
-  input:focus{border-color:#79b8ff; box-shadow:0 0 0 3px rgba(3,102,214,.15)}
-  .grid{display:grid; grid-template-columns:1fr 1fr; gap:var(--gap)}
-  @media (max-width:760px){ .grid{grid-template-columns:1fr} }
-
-  /* button */
-  .btn{
-    width:100%; margin-top:10px; padding:12px; border-radius:8px; border:1px solid #2c974b;
-    background:linear-gradient(#34d058,#28a745); color:#fff; font-weight:800; cursor:pointer;
-  }
-  .btn:active{transform:translateY(1px)}
-
-  /* result cards */
-  .cards{display:grid; grid-template-columns:1fr 1fr; gap:var(--gap); margin-top:var(--gap)}
-  @media (max-width:760px){ .cards{grid-template-columns:1fr} }
-  .card{
-    border:1px solid var(--bd); border-radius:var(--radius); background:var(--card);
-    padding:14px;
-  }
-  .card h3{margin:0 0 8px; font-size:16px}
-  .kv{display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px dashed var(--bd)}
-  .kv:last-child{border-bottom:none}
-  .pos{color:var(--pos); font-weight:800}
-  .neg{color:var(--neg); font-weight:800}
-  .pill{
-    display:inline-block; min-width:108px; text-align:center; padding:6px 10px; border-radius:999px;
-    border:1px solid var(--bd); background:#fff; font-weight:800;
-  }
-  .pill.pos{color:var(--pos)}
-  .pill.neg{color:var(--neg)}
-
-  .warn{color:var(--neg); font-weight:800; white-space:pre-line; margin-top:8px}
-</style>
+    .cards{display:grid; grid-template-columns:1fr 1fr; gap:var(--gap); margin-top:var(--gap)}
+    @media (max-width:760px){ .cards{grid-template-columns:1fr} }
+    .card{ border:1px solid var(--bd); border-radius:var(--radius); background:var(--card); padding:14px; }
+    .card h3{margin:0 0 8px; font-size:16px}
+    .kv{display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px dashed var(--bd)}
+    .kv:last-child{border-bottom:none}
+    .pos{color:var(--pos); font-weight:800}
+    .neg{color:var(--neg); font-weight:800}
+    .pill{ display:inline-block; min-width:108px; text-align:center; padding:6px 10px; border-radius:999px;
+      border:1px solid var(--bd); background:#fff; font-weight:800; }
+    .pill.pos{color:var(--pos)} .pill.neg{color:var(--neg)}
+    .warn{color:var(--neg); font-weight:800; white-space:normal; margin-top:8px}
+  </style>
 </head>
 <body>
 
-<!-- README 스타일 헤더 -->
-<div class="h1">리원 추가매수 간단 계산기 </div>
-<div class="badges">
-  <span class="badge">KRW 전용</span>
-  
-</div>
+<div class="h1">리원 추가매수 간단 계산기</div>
+<div class="badges"><span class="badge">KRW 전용</span></div>
 <div class="hr"></div>
 
-<!-- 상단 KPI (입력값 기준) -->
 <div class="section-title">📊 현재 손익 요약</div>
 <div class="badges" style="margin-top:0">
   <span id="topPnL" class="pill">손익 -</span>
   <span id="topRoi" class="pill">수익률 -</span>
 </div>
 
-<!-- 입력 섹션 -->
 <div class="section-title">📦 보유 정보</div>
 <fieldset>
-  <legend>입력값</legend>
+  <legend>보유 정보</legend>
   <div class="grid">
     <div>
       <label>코인명</label>
@@ -130,9 +102,9 @@
   </div>
 </fieldset>
 
-<div class="section-title">➕ 추가매수</div>
+<div class="section-title">➕ 추가매수 정보</div>
 <fieldset>
-  <legend>입력값2</legend>
+  <legend>추가매수 정보</legend>
   <div class="grid">
     <div>
       <label>추가매수 단가 (KRW) *</label>
@@ -147,13 +119,13 @@
   <input id="addInvest" type="number" inputmode="decimal" step="any" placeholder="금액 입력 시 수량 자동 계산">
   <button class="btn" id="calcBtn">계산하기</button>
   <div id="warn" class="warn" style="display:none;"></div>
-  <div class="note">※ 수량/금액 중 하나만 입력해도 됩니다.</div>
+  <div class="note">추가매수는 <b>수량 또는 금액</b> 중 하나만 입력하면 됩니다.</div>
 </fieldset>
 
 <div class="section-title">📈 결과</div>
 <div class="cards">
   <div class="card">
-    <h3>추가매수 전 (입력값)</h3>
+    <h3>추가매수 전 (보유 기준)</h3>
     <div class="kv"><span>보유수량</span><b id="bQty">-</b></div>
     <div class="kv"><span>매수평균가</span><b id="bAvg">-</b></div>
     <div class="kv"><span>매수금액</span><b id="bInvest">-</b></div>
@@ -162,7 +134,7 @@
     <div class="kv"><span>수익률</span><b id="bRoi">-</b></div>
   </div>
   <div class="card">
-    <h3>추가매수 후 (변경값)</h3>
+    <h3>추가매수 후 (변경 기준)</h3>
     <div class="kv"><span>보유수량</span><b id="aQty">-</b></div>
     <div class="kv"><span>매수평균가</span><b id="aAvg">-</b></div>
     <div class="kv"><span>매수금액</span><b id="aInvest">-</b></div>
@@ -197,15 +169,17 @@
     const addInvI = +$('addInvest').value;
 
     const warnings = [];
-    if(!holdQty || !holdAvg || !now || !addPrice) warnings.push('보유수량/매수평균가/현재가/추가매수 단가는 필수입니다.');
+    if(!holdQty || !holdAvg || !now || !addPrice){
+      warnings.push('보유수량·평균가·현재가·추가매수 단가는 필수입니다.');
+    }
     let addQty=0, addInv=0;
     if(addInvI>0){ addInv=addInvI; addQty=addInv/addPrice; }
     else if(addQtyI>0){ addQty=addQtyI; addInv=addQty*addPrice; }
-    else warnings.push('추가매수 수량 또는 매수금액 중 하나를 입력하세요.');
+    else { warnings.push('추가매수는 수량 또는 금액 중 하나만 입력하세요.'); }
 
     if(warnings.length){
       $('warn').style.display='block';
-      $('warn').textContent = warnings.join('\\n');
+      $('warn').innerHTML = warnings.join('<br>');
       return;
     }else{
       $('warn').style.display='none';
