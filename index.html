@@ -13,10 +13,13 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <link rel="apple-touch-icon" href="icon-192.png" />
 
-  <script>
+<script>
   if ('serviceWorker' in navigator) {
-    const v = encodeURIComponent(document.lastModified); // 파일 수정 시 자동 변경
-    window.addEventListener('load', () => navigator.serviceWorker.register(`sw.js?v=${v}`));
+    // 🔑 이 값을 매 배포 시 최신 커밋 해시로 바꿔주세요 (짧은 해시 OK)
+    const COMMIT_HASH = 'beafc91';
+    window.addEventListener('load', () =>
+      navigator.serviceWorker.register(`sw.js?v=${COMMIT_HASH}`)
+    );
   }
 </script>
 
