@@ -14,10 +14,11 @@
   <link rel="apple-touch-icon" href="icon-192.png" />
 
   <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => navigator.serviceWorker.register('sw.js'));
-    }
-  </script>
+  if ('serviceWorker' in navigator) {
+    const v = encodeURIComponent(document.lastModified); // 파일 수정 시 자동 변경
+    window.addEventListener('load', () => navigator.serviceWorker.register(`sw.js?v=${v}`));
+  }
+</script>
 
   <style>
     :root{
